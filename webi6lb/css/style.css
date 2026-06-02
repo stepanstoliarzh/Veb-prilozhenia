@@ -1,0 +1,329 @@
+:root{
+    --text:#111827;
+    --muted:#475569;
+    --border:#c7d2fe;
+    --bg1:#eff6ff;
+    --bg2:#ddd6fe;
+    --accent:#facc15;
+    --accent-strong:#f59e0b;
+    --blue:#2563eb;
+    --violet:#4f46e5;
+    --footer:#1e1b4b;
+}
+
+*{box-sizing:border-box;}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 100%);
+    padding-bottom:72px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:72px;
+    background:linear-gradient(90deg,var(--blue) 0%,var(--violet) 100%);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    z-index:10;
+    box-shadow:0 4px 18px rgba(29,78,216,.28);
+    overflow:hidden;
+}
+
+.header-inner{
+    width:min(980px,92vw);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:16px;
+}
+
+.logo,
+.header-inner>img,
+header img{
+    width:48px!important;
+    height:48px!important;
+    min-width:48px!important;
+    max-width:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    display:block!important;
+    flex:0 0 48px!important;
+    object-fit:contain!important;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+}
+
+.header-text{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    min-width:0;
+}
+
+.line1{
+    font-weight:800;
+    font-size:16px;
+    line-height:1.2;
+}
+
+.line2{
+    font-size:12px;
+    opacity:.9;
+    line-height:1.25;
+}
+
+main{
+    width:min(980px,92vw);
+    margin:0 auto;
+    padding-top:92px;
+}
+
+.hero,
+.card{
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(79,70,229,.10);
+}
+
+.hero{
+    background:linear-gradient(135deg,#ffffff 0%,#eef2ff 100%);
+    padding:20px;
+    margin-bottom:14px;
+}
+
+.hero h1{
+    margin:0 0 8px 0;
+    font-size:24px;
+}
+
+.hero p,
+.hero p.lead,
+.lead{
+    margin:0;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.card{
+    background:#fff;
+    padding:18px;
+    margin-bottom:14px;
+}
+
+.card h2{
+    margin:0 0 16px 0;
+    color:#1e3a8a;
+    font-size:22px;
+}
+
+.test-form{
+    display:grid;
+    gap:12px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:190px minmax(260px,1fr);
+    gap:12px;
+    align-items:center;
+}
+
+.form-row label,
+.form-row>span{
+    font-weight:800;
+    color:#1e3a8a;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:11px 12px;
+    font:inherit;
+    color:var(--text);
+    background:#f8fafc;
+    outline:none;
+}
+
+textarea{
+    min-height:88px;
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(37,99,235,.12);
+    background:#fff;
+}
+
+.check-label{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    color:var(--text)!important;
+    font-weight:700!important;
+}
+
+.check-label input{width:auto;}
+.mail-row{display:none;}
+
+button,
+.repeat-link,
+.back-button,
+#back_button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:max-content;
+    min-width:170px;
+    border:2px solid #facc15;
+    border-radius:999px;
+    padding:12px 20px;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent-strong) 100%);
+    color:#1f2937;
+    font-weight:900;
+    font-size:15px;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(245,158,11,.20);
+    transition:transform .08s ease,box-shadow .12s ease;
+}
+
+button:hover,
+.repeat-link:hover,
+.back-button:hover,
+#back_button:hover{
+    transform:translateY(-1px);
+    box-shadow:0 12px 24px rgba(245,158,11,.30);
+}
+
+.report-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:16px;
+}
+
+.report-grid p,
+.report-item{
+    margin:0;
+    padding:12px 14px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#f8fafc;
+    line-height:1.45;
+}
+
+.report-grid .wide,
+.report-item.wide{
+    grid-column:1/-1;
+}
+
+.status,
+.message{
+    padding:12px 14px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    font-weight:800;
+    margin:0 0 14px 0;
+}
+
+.status.good,
+.message.good{
+    background:#ecfdf5;
+    border-color:#86efac;
+    color:#166534;
+}
+
+.status.bad,
+.message.bad,
+.message.error{
+    background:#fff8db;
+    border-color:#facc15;
+    color:#92400e;
+}
+
+.message{
+    background:#eef2ff;
+    color:#1e3a8a;
+}
+
+footer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:56px;
+    background:linear-gradient(90deg,#312e81 0%,var(--footer) 100%);
+    color:#e5e7eb;
+    display:flex;
+    align-items:center;
+    z-index:10;
+}
+
+.footer-inner{
+    width:min(980px,92vw);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    font-size:13px;
+}
+
+.badge{
+    padding:6px 10px;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;
+    color:#fff8db;
+    background:rgba(250,204,21,.10);
+    white-space:nowrap;
+}
+
+/* Печатная версия: только проще, но без разваливания страницы */
+body.print-view{
+    background:#fff;
+    padding-bottom:0;
+}
+
+body.print-view header,
+body.print-view footer{
+    position:fixed;
+}
+
+body.print-view .hero,
+body.print-view .card{
+    box-shadow:none;
+}
+
+@media print{
+    header,footer,.repeat-link,.back-button,#back_button{display:none!important;}
+    body,body.print-view{background:#fff!important;padding-bottom:0!important;}
+    main{width:100%;padding:0!important;}
+    .hero,.card{box-shadow:none!important;border:1px solid #999!important;}
+}
+
+@media (max-width:760px){
+    header{height:88px;}
+    main{width:94vw;padding-top:108px;}
+    .form-row{grid-template-columns:1fr;gap:6px;}
+    .report-grid{grid-template-columns:1fr;}
+    .line1{font-size:14px;}
+    .line2{font-size:11px;}
+    .footer-inner{font-size:11px;}
+    .badge{white-space:normal;text-align:right;}
+}
